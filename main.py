@@ -2,13 +2,19 @@ import os
 import argparse
 
 def main():
-    parser = argparse.ArgumentParser(description="WIP 'wc' unix command line tool clone. ")
-    parser.add_argument('-c', '--check', type=str, help="Returns file size in bytes")
-    args = parser.parse_args()
+    #initialize/create the arg parser 
+    parser = argparse.ArgumentParser(description="WIP 'wc' unix command line tool clone. ") 
 
-    file = args.check
+    #command line argument with short and long form
+    parser.add_argument('-c', '--check', type=str, help="Returns file size in bytes") 
 
-    print(get_file_size(file))
+    #parse command line arguments
+    args = parser.parse_args() 
+
+    #store entered input
+    file = args.check 
+
+    print(f"{get_file_size(file)} bytes")  
 
 
 def get_file_size(file):
